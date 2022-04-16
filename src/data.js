@@ -1,5 +1,5 @@
 
- const data = [
+ const question = [
   {
    type: 'choice',
    question: 'It’s important that facilitators are aware of _____ that can occur online. ',
@@ -33,7 +33,7 @@
    feedBackText: '',
 }];
 
-export default data
+export default question
 
 
 
