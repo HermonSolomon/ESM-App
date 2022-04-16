@@ -1,0 +1,121 @@
+// This file contains all the base typography styles being used in this project.
+@use "../abstract/index" as *;
+@use "../abstract/variables" as *;
+
+body {
+  font-family: var(--font-stack);
+  color: var(--text-dark);
+  font-size: 1.6rem;
+  letter-spacing: 0.1px;
+  line-height: 1.6;
+  font-family: var(--font-stack);
+}
+
+// setting color to inherit from parent element. Allows for BEM's method of parent styling child.
+p,
+ul,
+li,
+a,
+div,
+span {
+  color: inherit;
+}
+
+// reseting list styles
+ul {
+  list-style: none;
+}
+
+// reseting link styles
+a {
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  // &:focus {
+  //   outline: 3px solid currentColor;
+  //   outline-offset: 5px;
+  // }
+}
+
+// the purpose for styling a .heading class instead of h1-h6 tags is so that the heading styles can be applied to elements other than h1-h6, this makes the use of semantic html tags easier without worrying about font styles which are uniques to certain tags.
+.heading {
+  font-weight: bold;
+  margin-bottom: clamp(1.5rem, 1.5vw, 3rem);
+
+  &--primary {
+    font-size: 4.8rem;
+    line-height: 1.2;
+  }
+
+  &--secondary {
+    font-size: 3.6rem;
+    line-height: 1.6;
+    margin-bottom: clamp(3rem, 2vw, 6rem);
+  }
+
+  &--tertiary {
+    font-size: clamp(2.4rem, 2vw, 2.8rem);
+    line-height: 1.6;
+  }
+
+  &--quaternary {
+    font-size: 2rem;
+    line-height: 1.6;
+    font-weight: 600;
+  }
+
+  &--center {
+    text-align: center;
+  }
+}
+
+.paragraph {
+  font-size: clamp(1.4rem, 1.5vw, 2rem);
+  line-height: 1.6;
+  display: inline-block;
+  width: 100%;
+  margin-bottom: clamp(1.5rem, 1.5vw, 3rem);
+  &__list {
+    list-style-position: inside;
+    list-style-type: "- ";
+    &--highlight {
+      list-style-position: outside;
+      color: $primary-dark;
+      padding-left: 6rem;
+    }
+  }
+  &--highlight {
+    color: $primary-light;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @extend .heading;
+}
+
+p {
+  @extend .paragraph;
+}
+/* Links */
+
+.link {
+  text-decoration: none;
+  color: var(--default-links);
+}
+
+.link:hover {
+  color: var(--default-links);
+  text-decoration: underline;
+}
+
+link:visited {
+  color: var(--visited-links);
+}

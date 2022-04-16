@@ -1,25 +1,26 @@
-import logo from './logo.svg';
+import { useState } from 'react';
+import "./App.scss"
+import QuizScreen from "./components/QuizScreen"
+import SplashScreen from "./components/SplashScreen/SplashScreen"
+
 import './App.css';
 
 function App() {
+  const [hasQuizStarted, setQuizStarted] = useState(false)
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+   <>
+   <div className='quiz-container'>
+     {
+       hasQuizStarted ? (
+        <QuizScreen retry={()=>setQuizStarted(false)} />
+       ) : (
+        <SplashScreen start={()=>setQuizStarted(true)} />
+       )
+     }
+   </div>
+   </>
   );
 }
 
 export default App;
+ 

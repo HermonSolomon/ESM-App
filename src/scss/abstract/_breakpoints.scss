@@ -1,0 +1,10 @@
+// media query breakpoints. Using a Map to allow for easy change that will apply to entire project.
+$breakpoints: (
+  "mobile-l": 320px,
+  "mobile-xl": 550px,
+  "tablet-pt": 768px,
+  "tablet-l": 1024px,
+  "laptop-sm": 1280px,
+  "laptop-lg": 1367px,
+  "desktop": 1921px,
+);

@@ -1,0 +1,19 @@
+@use "../abstract/index" as *;
+
+.flex-sb {
+  @include space-between();
+}
+.flex-column {
+  @include flex-column();
+}
+
+.mobile-view {
+  display: none;
+  @include media(tablet-l) {
+    display: block;
+  }
+}
+
+.text-margin-top {
+  margin-top: clamp(1.5rem, 1.5vw, 3rem);
+}
