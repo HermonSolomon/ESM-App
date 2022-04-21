@@ -1,17 +1,20 @@
 import { React, useState, useRef, useEffect } from "react";
 import { flushSync } from "react-dom";
+import Options from "../Options/Options.jsx";
 
 const Question = ({
-  questions,
+  question,
   totalQuestions,
-  currQuestionsIndex,
+  currQuestion,
+  answers,
   setAnswer,
 }) => {
   const [selectedOption, setSelectedOption] = useState(null);
   const timer = useRef(null);
   const progressBar = useRef(null);
 
-  const nextQuestion = () => {
+  function nextQuestion() {
+    console.log("selected");
     if (timer.current) {
       clearInterval(timer.current);
     }
@@ -19,41 +22,36 @@ const Question = ({
       setAnswer(selectedOption);
     });
     setSelectedOption(null);
-  };
+  }
 
   useEffect(() => {
-    progressBar.current.classlist.remove("active");
-    setTimeout(() => {
-      progressBar.current.classlist.add("active");
-    }, 0);
+    // progressBar.current.classlist.remove("active");
+    // setTimeout(() => {
+    //   progressBar.current.classlist.add("active");
+    // }, 0);
     timer.current = setTimeout(nextQuestion, 10 * 1000); // 10 secs
-    return nextQuestion();
-  }, [questions]);
+    return nextQuestion;
+  }, [question]);
 
   return (
     <div className="question">
       <div className="progress-bar" ref={progressBar}></div>
       <div className="question-count">
-        <b>{currQuestionsIndex / totalQuestions}</b>
+        <b>{currQuestion} </b>
       </div>
-
       <div className="main">
         <div className="title">
-          <span>Q:</span>
-          <p>{questions.title}</p>
+          <p>{question.question}</p>
         </div>
         <div className="options">
-          {questions.options.map((option, index) => {
-            return (
-              <div
-                className={index === selectedOption ? "option active" : option}
-                key={index}
-                onClick={() => setSelectedOption(index)}
-              >
-                {option}
-              </div>
-            );
-          })}
+          {answers.map((answer, index) => (
+            <Options
+              answer={answer}
+              key={index}
+              setSelectedOption={setSelectedOption}
+              nextQuestion={nextQuestion}
+            />
+          ))}
         </div>
       </div>
     </div>

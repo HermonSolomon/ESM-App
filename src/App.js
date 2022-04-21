@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import "./App.scss"
-import QuizScreen from "./components/QuizScreen"
+import QuizScreen from "./components/QuizScreen/QuizScreen"
 import SplashScreen from "./components/SplashScreen/SplashScreen"
 
 import './App.css';
