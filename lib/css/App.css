@@ -1,0 +1,11 @@
+@use "./scss/base/typography";
+@use "./scss/base/page";
+@use "./scss/base/gen-container";
+@use "./scss/base/utility-classes";
+@use "./components/Buttons/buttons";
+@use "./components/SplashScreen/_splash-screen.scss";
+@use "./components/QuizScreen/_quiz-screen.scss";
+@use "./components/Question/_question.scss";
+@use "./components/Options/_options.scss";
+@use "./components/QuizResult/_results-screen.scss";
+/*# sourceMappingURL=App.css.map */

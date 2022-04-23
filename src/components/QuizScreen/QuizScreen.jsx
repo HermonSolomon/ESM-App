@@ -8,17 +8,20 @@ const QuizScreen = ({ retry }) => {
   const [markedAns, setMarkedAns] = useState(new Array(QuestionList.length));
   const isQuestionEnd = currQuestionIndex === QuestionList.length;
 
-  let calculateResult = () => {
-    let correct = 0;
+  const calculateResult = () => {
+    let correctNum = 0;
+
     QuestionList.forEach((question, index) => {
-      if (question.correctOptionIndex == markedAns[index]) {
-        correct++;
+      if (question.correct === question.answer) {
+        correctNum++;
       }
+      console.log(question.correct);
     });
+
     return {
       total: QuestionList.length,
-      correct: correct,
-      percentage: Math.trunc(correct / QuestionList.length) * 100,
+      correct: correctNum,
+      percentage: Math.trunc(correctNum / QuestionList.length) * 100,
     };
   };
 

@@ -14,7 +14,6 @@ const Question = ({
   const progressBar = useRef(null);
 
   function nextQuestion() {
-    console.log("selected");
     if (timer.current) {
       clearInterval(timer.current);
     }

@@ -4,77 +4,84 @@
     "type": "choice",
     "question": "It’s important that facilitators are aware of _____ that can occur online.",
     "answer": "Assumptions and misinterpretations",
-    "correct": "1",
+    "correct": "Assumptions and misinterpretations",
     "feedBackText": ""
   },
   {
     "type": "choice",
     "question": "As a facilitator, it is important to establish a ____ for conversations.",
     "answer": "Code of conduct",
+    "correct": "Code of conduct",
     "feedBackText": ""
   },
   {
     "type": "choice",
     "question": "_____ is a key facilitating skill that consists of keeping discussions moving.",
     "answer": "Weaving",
+    "correct": "Weaving",
     "feedBackText": ""
   },
   {
     "type": "choice",
     "question": "Facilitators should use their______ – this is how they represent themselves online and relate to others.",
     "answer": "Social presence",
-    "correct": "1",
+    "correct": "Social presence",
     "feedBackText": ""
   },
   {
     "type": "choice",
     "question": "It is easy for misunderstandings to occur in online settings where the _____ cues are missing.",
     "answer": "Physical and verbal",
+    "correct": "Physical and verbal",
     "feedBackText": ""
   },
   {
     "type": "choice",
     "question": "It’s important that facilitators are aware of _____ that can occur online.",
     "answer": "Assumptions and misinterpretations",
-    "correct": "1",
+    "correct": "6",
     "feedBackText": ""
   },
   {
     "type": "choice",
     "question": "As a facilitator, it is important to establish a ____ for conversations.",
     "answer": "Code of conduct",
+    "correct": "7",
     "feedBackText": ""
   },
   {
     "type": "choice",
     "question": "_____ is a key facilitating skill that consists of keeping discussions moving.",
     "answer": "Weaving",
+    "correct": "8",
     "feedBackText": ""
   },
   {
     "type": "choice",
     "question": "Facilitators should use their______ – this is how they represent themselves online and relate to others.",
     "answer": "Social presence",
-    "correct": "1",
+    "correct": "9",
     "feedBackText": ""
   },
   {
     "type": "choice",
     "question": "It is easy for misunderstandings to occur in online settings where the _____ cues are missing.",
     "answer": "Physical and verbal",
+    "correct": "10",
     "feedBackText": ""
   },
   {
     "type": "choice",
     "question": "Facilitators should use their______ – this is how they represent themselves online and relate to others.",
     "answer": "Social presence",
-    "correct": "1",
+    "correct": "11",
     "feedBackText": ""
   },
   {
     "type": "choice",
     "question": "It is easy for misunderstandings to occur in online settings where the _____ cues are missing.",
     "answer": "Physical and verbal",
+    "correct": "12",
     "feedBackText": ""
   }
 ]
