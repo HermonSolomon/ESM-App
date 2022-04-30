@@ -9,19 +9,19 @@ const QuizScreen = ({ retry }) => {
   const isQuestionEnd = currQuestionIndex === QuestionList.length;
 
   const calculateResult = () => {
-    let correctNum = 0;
+    let correct = 0;
 
     QuestionList.forEach((question, index) => {
       if (question.correct === question.answer) {
-        correctNum++;
+        correct++;
       }
       console.log(question.correct);
     });
 
     return {
       total: QuestionList.length,
-      correct: correctNum,
-      percentage: Math.trunc(correctNum / QuestionList.length) * 100,
+      correct: correct,
+      percentage: Math.trunc((correct / QuestionList.length) * 100),
     };
   };
 

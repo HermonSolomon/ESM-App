@@ -1,5 +1,5 @@
 import { React, useState, useRef, useEffect } from "react";
-import { flushSync } from "react-dom";
+// import { flushSync } from "react-dom";
 import Options from "../Options/Options.jsx";
 
 const Question = ({
@@ -17,9 +17,9 @@ const Question = ({
     if (timer.current) {
       clearInterval(timer.current);
     }
-    flushSync(() => {
-      setAnswer(selectedOption);
-    });
+    // flushSync(() => {
+    setAnswer(selectedOption);
+    // });
     setSelectedOption(null);
   }
 
@@ -43,14 +43,17 @@ const Question = ({
           <p>{question.question}</p>
         </div>
         <div className="options">
-          {answers.map((answer, index) => (
-            <Options
-              answer={answer}
-              key={index}
-              setSelectedOption={setSelectedOption}
-              nextQuestion={nextQuestion}
-            />
-          ))}
+          {answers.map((answer, index) => {
+            console.log(answer.id);
+            return (
+              <Options
+                answer={answer}
+                key={index}
+                setSelectedOption={setSelectedOption}
+                nextQuestion={nextQuestion}
+              />
+            );
+          })}
         </div>
       </div>
     </div>

@@ -1,15 +1,15 @@
 import React from "react";
 
-const Options = ({ answer, index, setSelectedOption, nextQuestion }) => {
+const Options = ({ answer, index, nextQuestion }) => {
+  console.log(answer.index);
   return (
-    <div
-      className={"option-div"}
-      key={index}
-      // onClick={() => setSelectedOption(index)}
+    <li
+      className={`option-div option-div--bg${answer.id}`}
+      key={answer.id}
       onClick={nextQuestion}
     >
       {answer.answer}
-    </div>
+    </li>
   );
 };
 

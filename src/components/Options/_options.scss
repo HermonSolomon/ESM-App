@@ -1,3 +1,5 @@
+@use "../../scss/abstract/index" as *;
+
 .options {
   display: flex;
   flex-wrap: wrap;
@@ -20,6 +22,41 @@
     font-weight: 500;
     min-height: 140px;
     cursor: pointer;
+
+    &--bg1,
+    &--bg7 {
+      border-color: var(--avado-green);
+    }
+
+    &--bg2,
+    &--bg8 {
+      border-color: var(--teal);
+    }
+
+    &--bg3,
+    &--bg9 {
+      border-color: var(--orange-pop);
+    }
+
+    &--bg4,
+    &bg--10 {
+      border-color: var(--iris);
+    }
+
+    &--bg5,
+    &--bg11 {
+    }
+
+    &--bg6,
+    &--bg12 {
+    }
+
+    // @include media(mobile-l) {
+    //   width: 329px;
+    //   min-height: 15.183px;
+    //   padding: 0;
+    //   font-size: 1rem;
+    // }
 
     &:hover {
       -webkit-transform: translate(-5px, -5px);
