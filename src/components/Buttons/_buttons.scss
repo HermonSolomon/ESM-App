@@ -23,6 +23,16 @@
       background: var(--indigo);
     }
   }
+  &--primary_center {
+    background: var(--iris);
+    color: white;
+    padding: 0.5rem 3rem;
+    margin: 15px auto;
+    &:hover {
+      color: white;
+      background: var(--indigo);
+    }
+  }
 
   &--secondary {
     background: $light;

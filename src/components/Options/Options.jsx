@@ -1,7 +1,7 @@
 import React from "react";
 
 const Options = ({ answer, index, handleSubmitAnswer }) => {
-  console.log(answer.index);
+  // console.log(answer.index);
   return (
     <li
       role="button"
@@ -9,6 +9,7 @@ const Options = ({ answer, index, handleSubmitAnswer }) => {
       key={answer.id}
       onClick={() => {
         handleSubmitAnswer(index);
+        console.log("clicked");
       }} // should submit answer then feedback to appear
     >
       {answer.answer}

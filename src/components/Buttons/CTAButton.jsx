@@ -1,9 +1,9 @@
 import React from "react";
 
-const CTAButton = ({ modifier, start, text }) => {
+const CTAButton = ({ modifier, action, text }) => {
   return (
     <>
-      <button className={`btn btn--${modifier}`} onClick={start}>
+      <button className={`btn btn--${modifier}`} onClick={() => action()}>
         {text}
       </button>
     </>

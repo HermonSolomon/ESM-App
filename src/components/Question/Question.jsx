@@ -7,39 +7,47 @@ const Question = ({ question, currQuestion, answers, handleSubmitAnswer }) => {
   const progressBar = useRef(null);
 
   useEffect(() => {
-    // progressBar.current.classlist.remove("active");
-    // setTimeout(() => {
-    //   progressBar.current.classlist.add("active");
-    // }, 0);
+    progressBar.current.classList.remove("active");
+    setTimeout(() => {
+      progressBar.current.classList.add("active");
+    }, 0);
 
     // if timer reaches 0 without any submmistion handleSubmit should display incorrect/timeout feedback
-    clearTimeout(timer.current);
-    timer.current = setTimeout(handleSubmitAnswer(-1), 10 * 1000); // 10 secs
+    if (timer.current) {
+      clearTimeout(timer.current);
+    }
+    timer.current = setTimeout(() => {
+      handleSubmitAnswer(-1);
+    }, 10 * 1000); // 10 secs
   }, [question]);
+
   return (
-    <div className="question">
+    <>
       <div className="progress-bar" ref={progressBar}></div>
-      <div className="question-count">
-        <b>{currQuestion} </b>
-      </div>
-      <div className="main">
-        <div className="title">
-          <p>{question.question}</p>
+      <div className="question">
+        <div className="question__count">
+          <b>{currQuestion} </b>
         </div>
-        <div className="options">
-          {answers.map((answer, index) => {
-            // console.log(answer.id);
-            return (
-              <Options
-                answer={answer}
-                key={index}
-                handleSubmitAnswer={handleSubmitAnswer}
-              />
-            );
-          })}
+        <div className="main">
+          <div className="title">
+            <p>{question.question}</p>
+          </div>
+          <div className="options">
+            {answers.map((answer, index) => {
+              // console.log(answer.id);
+              return (
+                <Options
+                  answer={answer}
+                  key={index}
+                  handleSubmitAnswer={handleSubmitAnswer}
+                  index={index}
+                />
+              );
+            })}
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
