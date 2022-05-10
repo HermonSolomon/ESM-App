@@ -4,6 +4,9 @@ import QuizResult from "../QuizResult/QuizResult";
 import Question from "../Question/Question.jsx";
 import Feedback from "../Feedback/Feedback";
 import { flushSync } from "react-dom";
+import generateRandomSequence from "../../helpers/generateRandomSequence";
+
+const randomSequence = generateRandomSequence(QuestionList);
 
 const QuizScreen = ({ retry }) => {
   const [currQuestionIndex, setCurrQuestionIndex] = useState(0);
@@ -65,7 +68,7 @@ const QuizScreen = ({ retry }) => {
         <QuizResult result={calculateResult()} retry={retry} />
       ) : (
         <Question
-          question={QuestionList[currQuestionIndex]}
+          question={QuestionList[randomSequence[currQuestionIndex]]}
           answers={QuestionList}
           currQuestion={currQuestionIndex + 1}
           handleSubmitAnswer={handleSubmitAnswer}

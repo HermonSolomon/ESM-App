@@ -511,13 +511,13 @@ link:visited {
     width: 69%;
     background-color: var(--indigo);
   }
-  80% {
-    width: 80%;
-    background-color: var(--indigo);
+  70% {
+    width: 70%;
+    background-color: orangered;
   }
-  90% {
+  100% {
     width: 90%;
-    background-color: var(--indigo);
+    background-color: orangered;
   }
 }
 .options {

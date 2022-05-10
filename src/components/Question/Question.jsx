@@ -1,5 +1,4 @@
 import { React, useState, useRef, useEffect } from "react";
-// import { flushSync } from "react-dom";
 import Options from "../Options/Options.jsx";
 
 const Question = ({ question, currQuestion, answers, handleSubmitAnswer }) => {
