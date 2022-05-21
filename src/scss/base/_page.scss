@@ -9,6 +9,8 @@
   filter: opacity(1);
   overflow-y: auto;
   overflow-x: hidden;
+  display: flex;
+  justify-content: center;
 
   &--font-dark {
     .heading {

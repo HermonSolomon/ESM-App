@@ -1,9 +1,16 @@
 import { React, useState, useRef, useEffect } from "react";
 import Options from "../Options/Options.jsx";
 
-const Question = ({ question, currQuestion, answers, handleSubmitAnswer }) => {
-  const timer = useRef(null);
-  const progressBar = useRef(null);
+const Question = ({
+  question,
+  currQuestion,
+  answers,
+  handleSubmitAnswer,
+  timer,
+  progressBar,
+}) => {
+  // const timer = useRef(null);
+  // const progressBar = useRef(null);
 
   useEffect(() => {
     progressBar.current.classList.remove("active");
@@ -22,8 +29,9 @@ const Question = ({ question, currQuestion, answers, handleSubmitAnswer }) => {
 
   return (
     <>
-      <div className="progress-bar" ref={progressBar}></div>
       <div className="question">
+        <div className="progress-bar" ref={progressBar}></div>
+
         <div className="question__count">
           <b>{currQuestion} </b>
         </div>

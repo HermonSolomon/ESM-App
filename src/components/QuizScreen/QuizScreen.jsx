@@ -16,6 +16,9 @@ const QuizScreen = ({ retry }) => {
   const [isFeedBackVisible, setIsFeedBackVisible] = useState(false);
   const [isCorrect, setisCorrect] = useState(null);
 
+  const timer = useRef(null);
+  const progressBar = useRef(null);
+
   // to be called on the feedback button
   const nextQuestion = () => {
     console.log(isFeedBackVisible);
@@ -45,6 +48,12 @@ const QuizScreen = ({ retry }) => {
   const handleSubmitAnswer = (ansNum) => {
     console.log(ansNum);
     setIsFeedBackVisible(true);
+
+    if (timer.current) {
+      clearTimeout(timer.current);
+      progressBar.current.classList.remove("active");
+    }
+
     // temporary arr for marked ans
     const arr1 = markedAns;
     arr1[currQuestionIndex] = ansNum;
@@ -72,6 +81,8 @@ const QuizScreen = ({ retry }) => {
           answers={QuestionList}
           currQuestion={currQuestionIndex + 1}
           handleSubmitAnswer={handleSubmitAnswer}
+          timer={timer}
+          progressBar={progressBar}
         />
       )}
       {/*Popup*/}

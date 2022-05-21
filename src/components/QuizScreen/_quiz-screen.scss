@@ -4,15 +4,16 @@
   background-color: #ededf5;
   background-size: cover;
 
-  // .question {
-  //   @include media(mobile-l) {
-  //     width: 80%;
-  //     .title {
-  //       p {
-  //         max-width: 26ch;
-  //         font-size: 1rem;
-  //       }
-  //     }
-  //   }
-  // }
+  .question {
+    @include media(mobile-l) {
+      width: 80%;
+      position: absolute;
+      .title {
+        p {
+          max-width: 36ch;
+          font-size: 1rem;
+        }
+      }
+    }
+  }
 }
