@@ -14,12 +14,12 @@ const QuizScreen = ({ retry }) => {
   const [markedAns, setMarkedAns] = useState(new Array(QuestionList.length));
   const isQuestionEnd = currQuestionIndex === QuestionList.length;
   const [isFeedBackVisible, setIsFeedBackVisible] = useState(false);
-  const [isCorrect, setisCorrect] = useState(null);
+  const [isCorrect, setIsCorrect] = useState(null);
 
   const timer = useRef(null);
   const progressBar = useRef(null);
 
-  // to be called on the feedback button
+  // To be called on the feedback button
   const nextQuestion = () => {
     console.log(isFeedBackVisible);
     flushSync(() => {
@@ -61,13 +61,13 @@ const QuizScreen = ({ retry }) => {
 
     if (ansNum < 0) {
       // out of time text goes here
-      setisCorrect("time up");
+      setIsCorrect("time up");
     } else if (ansNum == currQuestionIndex) {
       // correct feedback text goes here
-      setisCorrect("correct");
+      setIsCorrect("correct");
     } else {
       // incorrect feedback goes here
-      setisCorrect("incorrect");
+      setIsCorrect("incorrect");
     }
   };
 
